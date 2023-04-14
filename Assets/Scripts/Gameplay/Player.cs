@@ -11,11 +11,10 @@ public class Player : MonoBehaviour
     private float originalHeight;
     private float originalYPosition;
 
+
     private void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
-
-
     }
 
     void Update()
@@ -43,6 +42,7 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x, originalHeight * 2, transform.localScale.z);
             transform.position = new Vector3(transform.position.x, originalYPosition + originalHeight, transform.position.z);
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

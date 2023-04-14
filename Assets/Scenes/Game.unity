@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1179623
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 30729088}
   - component: {fileID: 30729090}
   - component: {fileID: 30729089}
+  - component: {fileID: 30729091}
   m_Layer: 5
   m_Name: Scoreingame
   m_TagString: UI
@@ -342,6 +343,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30729087}
   m_CullTransparentMesh: 1
+--- !u!114 &30729091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30729087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53cdea7d842413b4ba303ad57e4f0eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &357552652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6660929268112165199, guid: a071f1f7fb0af9f418f32976e0f0be36, type: 3}
@@ -396,6 +409,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01cb0dc479ae9704984456515cb29b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiObjects:
+  - {fileID: 1426081025}
+  - {fileID: 775463833}
+  - {fileID: 1579248819}
+  - {fileID: 705213827}
+  - {fileID: 1779345510}
+  - {fileID: 1179622}
+  score_main: {fileID: 30729087}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,12 +516,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 1
   uiObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  score_main: {fileID: 0}
+  - {fileID: 1426081025}
+  - {fileID: 775463833}
+  - {fileID: 1579248819}
+  - {fileID: 705213827}
+  - {fileID: 1779345510}
+  - {fileID: 1179622}
+  score_main: {fileID: 30729087}
 --- !u!1 &705213827
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &705213828
 RectTransform:
   m_ObjectHideFlags: 0
@@ -648,13 +670,14 @@ GameObject:
   - component: {fileID: 775463837}
   - component: {fileID: 775463836}
   - component: {fileID: 775463835}
+  - component: {fileID: 775463838}
   m_Layer: 5
   m_Name: Restart
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &775463834
 RectTransform:
   m_ObjectHideFlags: 0
@@ -719,7 +742,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 775463836}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 775463838}
+        m_TargetAssemblyTypeName: RestartBeforeLoss, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &775463836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,6 +793,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775463833}
   m_CullTransparentMesh: 1
+--- !u!114 &775463838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775463833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63d440307a656247b419b34b6fedd61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1106489993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1426081026
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1166,7 +1213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1579248820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1393,7 +1440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1779345511
 RectTransform:
   m_ObjectHideFlags: 0

@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Loss : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject[] uiObjects;
+    public GameObject score_main;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
@@ -21,7 +22,12 @@ public class Loss : MonoBehaviour
     {
         if (other.gameObject.tag == "Spike")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Time.timeScale = 0;
+            foreach (GameObject uiObject in uiObjects)
+            {
+                uiObject.SetActive(true);
+            }
+            score_main.SetActive(false);
         }
 
     }
