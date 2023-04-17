@@ -23,20 +23,20 @@ public class Player : MonoBehaviour
         originalHeight = transform.localScale.y;
         originalYPosition = transform.position.y;
 
-        if (Input.GetKey(KeyCode.Space) && !inAir)
+        if (Input.GetKey(KeyCode.W) && !inAir)
         {
             inAir = true;
             m_Rigidbody.AddForce(force);
         }
 
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             // Сжимаем капсулу и смещаем ее ниже
             transform.localScale = new Vector3(transform.localScale.x, originalHeight / 2, transform.localScale.z);
             transform.position = new Vector3(transform.position.x, originalYPosition - originalHeight / 2, transform.position.z);
         }
-        else if (Input.GetKeyUp(KeyCode.DownArrow))
+        else if (Input.GetKeyUp(KeyCode.S))
         {
             // Возвращаем капсулу в начальное состояние
             transform.localScale = new Vector3(transform.localScale.x, originalHeight * 2, transform.localScale.z);
