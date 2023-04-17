@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject obstaclePrefab;
+    public GameObject obstaclePrefabUp;
     public float minDelay = 1f;
     public float maxDelay = 10f;
     public float moveSpeed = 5f;
@@ -38,12 +39,27 @@ public class Spawner : MonoBehaviour
 
     public void Invoke()
     {
-        Invoke("Spawn", Random.Range(minDelay, maxDelay));
+        if (Random.Range(1, 3) == 1)
+        {
+            Debug.Log("Spawn down");
+            Invoke("Spawn", Random.Range(minDelay, maxDelay));
+        }
+        else
+        {
+            Debug.Log("Spawn Up");
+            Invoke("SpawnUp", Random.Range(minDelay, maxDelay));
+        }
+
     }
 
     public void Spawn()
     {
-        GameObject obstacle = Instantiate(obstaclePrefab, transform.position, Quaternion.identity);
+        GameObject obstacle = Instantiate(obstaclePrefab, new Vector2(23f, -3.2f), Quaternion.identity);
+        obstacleList.Add(obstacle);
+    }
+    public void SpawnUp()
+    {
+        GameObject obstacle = Instantiate(obstaclePrefabUp, new Vector2(23f,-1.5f), Quaternion.identity);
         obstacleList.Add(obstacle);
     }
 

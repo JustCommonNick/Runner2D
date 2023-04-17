@@ -6,12 +6,7 @@ public class Loss : MonoBehaviour
 {
     public GameObject[] uiObjects;
     public GameObject score_main;
-
-    void Start()
-    {
-        
-    }
-
+    public bool loss = false;
 
     void Update()
     {
@@ -20,15 +15,22 @@ public class Loss : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Spike")
+        if (other.gameObject.tag == "Enemy")
         {
+
             Time.timeScale = 0;
             foreach (GameObject uiObject in uiObjects)
             {
                 uiObject.SetActive(true);
             }
             score_main.SetActive(false);
+            loss = true;
         }
 
+    }
+
+    public void false_loss()
+    {
+        loss = false;
     }
 }

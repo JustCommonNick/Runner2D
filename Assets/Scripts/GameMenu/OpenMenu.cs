@@ -7,9 +7,13 @@ public class OpenMenu : MonoBehaviour
     public bool time = true;
     public GameObject[] uiObjects;
     public GameObject score_main;
+    public GameObject lose;
+    private bool _lose; 
+
 
     void Update()
     {
+        _lose = lose.GetComponent<Loss>().loss;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (time == true)
@@ -22,7 +26,7 @@ public class OpenMenu : MonoBehaviour
                 }
                 score_main.SetActive(false);
             }
-            else
+            else if (_lose == false)
             {
                 Time.timeScale = 1;
                 time = true;
