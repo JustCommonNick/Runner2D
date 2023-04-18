@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameScene : MonoBehaviour
 {
-    public AudioClip song;
-    public AudioSource asource;
 
     public void StartSceneOnClick()
     {
+        Invoke("StartScene", 0.3f);
+    }
+
+    void StartScene()
+    {
         SceneManager.LoadScene("Game");
-        asource.clip = song;
-        asource.Play();
     }
 }
