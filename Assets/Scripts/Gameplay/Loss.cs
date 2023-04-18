@@ -7,6 +7,7 @@ public class Loss : MonoBehaviour
     public GameObject[] uiObjects;
     public GameObject score_main;
     public bool loss = false;
+    public GameObject soundmanager;
 
     void Update()
     {
@@ -17,7 +18,7 @@ public class Loss : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-
+            soundmanager.GetComponent<Sounds>().HitEnemy();
             Time.timeScale = 0;
             foreach (GameObject uiObject in uiObjects)
             {

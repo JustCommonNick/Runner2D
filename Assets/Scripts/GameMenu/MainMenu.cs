@@ -8,13 +8,11 @@ public class MainMenu : MonoBehaviour
     public void StartSceneOnClick()
     {
         Time.timeScale = 1;
-        Invoke("BeforeStartSceneOnClick", 0.2f);
-        Debug.Log("сработала кнопка открытие главного меню");
+        Invoke("BeforeStartSceneOnClick", 0.1f);
     }
 
     void BeforeStartSceneOnClick()
     {
-        Debug.Log("Сработало открытие главного меню");
         SceneManager.LoadScene("Main");
 
     }

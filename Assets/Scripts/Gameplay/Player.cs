@@ -10,7 +10,8 @@ public class Player : MonoBehaviour
 
     private float originalHeight;
     private float originalYPosition;
-    
+
+    public GameObject soundmanager;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
         {
             inAir = true;
             m_Rigidbody.AddForce(force);
+            Invoke("soundtouchground", 0.8f);
         }
 
 
@@ -48,6 +50,15 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            
             inAir = false;
+        }
+
+    }
+
+    void soundtouchground()
+    {
+        soundmanager.GetComponent<Sounds>().TouchGround();
     }
 }

@@ -57,7 +57,7 @@ public class Spawner : MonoBehaviour
     }
     public void SpawnUp()
     {
-        GameObject obstacle = Instantiate(obstaclePrefabUp, new Vector2(23f,-1.5f), Quaternion.identity);
+        GameObject obstacle = Instantiate(obstaclePrefabUp, new Vector2(23f, -1.5f), Quaternion.identity);
         obstacleList.Add(obstacle);
     }
 
@@ -69,5 +69,9 @@ public class Spawner : MonoBehaviour
             moveSpeed += 0.05f;
         }
 
+    }
+
+    public void DestroyAll()
+    {
     }
 }
