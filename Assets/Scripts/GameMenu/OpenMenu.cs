@@ -8,8 +8,7 @@ public class OpenMenu : MonoBehaviour
     public GameObject[] uiObjects;
     public GameObject score_main;
     public GameObject lose;
-    private bool _lose; 
-
+    private bool _lose;
 
     void Update()
     {

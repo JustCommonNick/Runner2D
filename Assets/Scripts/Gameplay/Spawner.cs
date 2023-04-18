@@ -41,12 +41,10 @@ public class Spawner : MonoBehaviour
     {
         if (Random.Range(1, 3) == 1)
         {
-            Debug.Log("Spawn down");
             Invoke("Spawn", Random.Range(minDelay, maxDelay));
         }
         else
         {
-            Debug.Log("Spawn Up");
             Invoke("SpawnUp", Random.Range(minDelay, maxDelay));
         }
 
