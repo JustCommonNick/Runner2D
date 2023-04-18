@@ -11,7 +11,7 @@ public class Loss : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -33,5 +33,10 @@ public class Loss : MonoBehaviour
     public void false_loss()
     {
         loss = false;
+    }
+
+    void all()
+    {
+
     }
 }

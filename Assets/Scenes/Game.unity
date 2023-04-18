@@ -1621,7 +1621,7 @@ MonoBehaviour:
   songs:
   - {fileID: 8300000, guid: c0ab877b37fad314ea82178716e1c353, type: 3}
   - {fileID: 8300000, guid: ba54d0990f685b043964bab767e19f84, type: 3}
-  - {fileID: 8300000, guid: dfb97e5f433a8fb40b1805bf44800a53, type: 3}
+  - {fileID: 8300000, guid: 9045a8f7968bfbf49838af70a3b76c6a, type: 3}
   asource: {fileID: 1671371589}
 --- !u!1 &1779345510
 GameObject:
