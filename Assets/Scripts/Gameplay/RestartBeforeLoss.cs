@@ -8,8 +8,12 @@ public class RestartBeforeLoss : MonoBehaviour
     public GameObject lose;
     
 
-
     public void Restart()
+    {
+        Invoke("InvokeRestart", 0.2f);
+    }
+
+    void InvokeRestart()
     {
         lose.GetComponent<Loss>().false_loss();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

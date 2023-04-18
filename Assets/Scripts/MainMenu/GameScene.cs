@@ -8,7 +8,7 @@ public class GameScene : MonoBehaviour
 
     public void StartSceneOnClick()
     {
-        Invoke("StartScene", 0.3f);
+        Invoke("StartScene", 0.2f);
     }
 
     void StartScene()
