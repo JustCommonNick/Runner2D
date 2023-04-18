@@ -10,13 +10,15 @@ public class RestartBeforeLoss : MonoBehaviour
 
     public void Restart()
     {
-        Invoke("InvokeRestart", 0.2f);
+        Time.timeScale = 1;
+        Invoke("BeforeRestart", 0.2f);
+        Debug.Log("сработала кнопка рестарт");
     }
 
-    void InvokeRestart()
+    void BeforeRestart()
     {
+        Debug.Log("сработал рестарт");
         lose.GetComponent<Loss>().false_loss();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1;
     }
 }
