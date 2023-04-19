@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour
 
     public void Spawn()
     {
-        int rnd = Random.Range(1, 7);
+        int rnd = Random.Range(0, 7);
         GameObject obstacle = Instantiate(obstaclePrefab[rnd], new Vector3(23f, -2.97f , -1f), Quaternion.identity);
         obstacleList.Add(obstacle);
     }
