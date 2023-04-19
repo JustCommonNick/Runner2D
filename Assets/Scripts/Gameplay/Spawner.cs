@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
 
 
 
-    void Update()
+    void FixedUpdate()
     {
         for (int i = obstacleList.Count - 1; i >= 0; i--)
         {
@@ -53,7 +53,7 @@ public class Spawner : MonoBehaviour
     public void Spawn()
     {
         int rnd = Random.Range(1, 7);
-        GameObject obstacle = Instantiate(obstaclePrefab[rnd], new Vector2(23f, -3.2f), Quaternion.identity);
+        GameObject obstacle = Instantiate(obstaclePrefab[rnd], new Vector3(23f, -2.97f , -1f), Quaternion.identity);
         obstacleList.Add(obstacle);
     }
     public void SpawnUp()
