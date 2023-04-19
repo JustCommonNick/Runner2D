@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject obstaclePrefab;
+    public GameObject[] obstaclePrefab;
     public GameObject obstaclePrefabUp;
     public float minDelay = 1f;
     public float maxDelay = 10f;
@@ -52,12 +52,13 @@ public class Spawner : MonoBehaviour
 
     public void Spawn()
     {
-        GameObject obstacle = Instantiate(obstaclePrefab, new Vector2(23f, -3.2f), Quaternion.identity);
+        int rnd = Random.Range(1, 7);
+        GameObject obstacle = Instantiate(obstaclePrefab[rnd], new Vector2(23f, -3.2f), Quaternion.identity);
         obstacleList.Add(obstacle);
     }
     public void SpawnUp()
     {
-        GameObject obstacle = Instantiate(obstaclePrefabUp, new Vector2(23f, -1.5f), Quaternion.identity);
+        GameObject obstacle = Instantiate(obstaclePrefabUp, new Vector2(23f, -2f), Quaternion.identity);
         obstacleList.Add(obstacle);
     }
 
