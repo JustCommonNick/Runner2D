@@ -7,12 +7,12 @@ public class OpenMenu : MonoBehaviour
     public bool time = true;
     public GameObject[] uiObjects;
     public GameObject score_main;
-    public GameObject lose;
+    public GameObject Player;
     private bool _lose;
 
     void Update()
     {
-        _lose = lose.GetComponent<Loss>().loss;
+        _lose = Player.GetComponent<Loss>().loss;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (time == true)
@@ -24,6 +24,7 @@ public class OpenMenu : MonoBehaviour
                     uiObject.SetActive(true);
                 }
                 score_main.SetActive(false);
+                Player.GetComponent<CapsuleCollider2D>().enabled = false;
             }
             else if (_lose == false)
             {
@@ -34,6 +35,7 @@ public class OpenMenu : MonoBehaviour
                     uiObject.SetActive(false);
                 }
                 score_main.SetActive(true);
+                Player.GetComponent<CapsuleCollider2D>().enabled = true;
             }
         }
     }

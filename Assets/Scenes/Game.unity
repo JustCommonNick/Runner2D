@@ -526,7 +526,7 @@ MonoBehaviour:
   - {fileID: 1779345510}
   - {fileID: 1179622}
   score_main: {fileID: 30729087}
-  lose: {fileID: 357552652}
+  Player: {fileID: 357552652}
 --- !u!1 &625983914
 GameObject:
   m_ObjectHideFlags: 0
