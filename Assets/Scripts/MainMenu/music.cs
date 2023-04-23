@@ -7,7 +7,7 @@ public class music : MonoBehaviour
     public AudioClip song;
     public AudioSource asource;
 
-    public void ButtonClickSound()
+    public void ButtonClickSound(bool penis)
     {
         asource.clip = song;
         asource.Play();

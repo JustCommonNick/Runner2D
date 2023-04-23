@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public void StartSceneOnClick()
     {
         Time.timeScale = 1;
-        Invoke("BeforeStartSceneOnClick", 0.1f);
+        Invoke("BeforeStartSceneOnClick", 0.2f);
     }
 
     void BeforeStartSceneOnClick()

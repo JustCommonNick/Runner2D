@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     private float originalYPosition;
 
     public GameObject soundmanager;
+    bool _loss;
+    
+    public GameObject OpenMenu;
 
     private void Start()
     {
@@ -31,19 +34,22 @@ public class Player : MonoBehaviour
             Invoke("soundtouchground", 0.8f);
         }
 
-
-        if (Input.GetKeyDown(KeyCode.S))
+        if (this.GetComponent<Loss>().loss == false && OpenMenu.GetComponent<OpenMenu>().open_menu == false)
         {
-            // Сжимаем капсулу и смещаем ее ниже
-            transform.localScale = new Vector3(transform.localScale.x, originalHeight / 2, transform.localScale.z);
-            transform.position = new Vector3(transform.position.x, originalYPosition - originalHeight / 2, transform.position.z);
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                // Сжимаем капсулу и смещаем ее ниже
+                transform.localScale = new Vector3(transform.localScale.x, originalHeight / 2, transform.localScale.z);
+                transform.position = new Vector3(transform.position.x, originalYPosition - originalHeight / 2, transform.position.z);
+            }
+            else if (Input.GetKeyUp(KeyCode.S))
+            {
+                // Возвращаем капсулу в начальное состояние
+                transform.localScale = new Vector3(transform.localScale.x, originalHeight * 2, transform.localScale.z);
+                transform.position = new Vector3(transform.position.x, originalYPosition + originalHeight, transform.position.z);
+            }
         }
-        else if (Input.GetKeyUp(KeyCode.S))
-        {
-            // Возвращаем капсулу в начальное состояние
-            transform.localScale = new Vector3(transform.localScale.x, originalHeight * 2, transform.localScale.z);
-            transform.position = new Vector3(transform.position.x, originalYPosition + originalHeight, transform.position.z);
-        }
+        
 
     }
 

@@ -9,6 +9,7 @@ public class OpenMenu : MonoBehaviour
     public GameObject score_main;
     public GameObject Player;
     private bool _lose;
+    public bool open_menu;
 
     void Update()
     {
@@ -24,7 +25,8 @@ public class OpenMenu : MonoBehaviour
                     uiObject.SetActive(true);
                 }
                 score_main.SetActive(false);
-                Player.GetComponent<CapsuleCollider2D>().enabled = false;
+                Player.GetComponent<BoxCollider2D>().enabled = false;
+                open_menu = true;
             }
             else if (_lose == false)
             {
@@ -35,7 +37,8 @@ public class OpenMenu : MonoBehaviour
                     uiObject.SetActive(false);
                 }
                 score_main.SetActive(true);
-                Player.GetComponent<CapsuleCollider2D>().enabled = true;
+                Player.GetComponent<BoxCollider2D>().enabled = true;
+                open_menu = false;
             }
         }
     }
