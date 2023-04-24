@@ -67,7 +67,7 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1.0f);
-            moveSpeed += 0.05f;
+            moveSpeed += 0.01f;
         }
 
     }

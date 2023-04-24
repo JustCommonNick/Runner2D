@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class Score : MonoBehaviour
 {
-    private float score;
+    public float score;
     public GameObject score_menu;
     // Start is called before the first frame update
     void Start()

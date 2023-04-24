@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
+using TMPro;
 
 public class Loss : MonoBehaviour
 {
@@ -8,11 +10,24 @@ public class Loss : MonoBehaviour
     public GameObject score_main;
     public bool loss = false;
     public GameObject soundmanager;
+    public GameObject Score;
+    public GameObject Bscore;
+
+    private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
+    private void OnDisable() => YandexGame.GetDataEvent -= GetLoad;
 
 
-    void Update()
+    private void Start()
     {
+        if (YandexGame.SDKEnabled == true)
+        {
+            GetLoad();
+        }
+    }
 
+    void GetLoad() 
+    {
+        Bscore.GetComponent<TextMeshProUGUI>().text = $"Best Score: {YandexGame.savesData.BScore}";
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -27,6 +42,15 @@ public class Loss : MonoBehaviour
             }
             score_main.SetActive(false);
             loss = true;
+            
+            if (YandexGame.savesData.BScore < Score.GetComponent<Score>().score)
+            {
+                YandexGame.savesData.BScore = (int)Score.GetComponent<Score>().score;
+                Bscore.GetComponent<TextMeshProUGUI>().text = $"Best Score: {YandexGame.savesData.BScore}";
+                //YandexGame.NewLeaderboardScores(string "Bscore", YandexGame.savesData.BScore);
+                YandexGame.SaveProgress();
+            }
+            
         }
 
     }
@@ -36,8 +60,4 @@ public class Loss : MonoBehaviour
         loss = false;
     }
 
-    void all()
-    {
-
-    }
 }
