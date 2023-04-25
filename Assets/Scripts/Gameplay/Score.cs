@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 public class Score : MonoBehaviour
 {
     public float score;
@@ -16,7 +17,7 @@ public class Score : MonoBehaviour
     void Update()
     {
         score += 1 * Time.deltaTime;
-        this.GetComponent<TextMeshProUGUI>().text = $"Score: {(int)score}";
-        score_menu.GetComponent<TextMeshProUGUI>().text = $"Score: {(int)score}";
+        this.GetComponent<TextMeshProUGUI>().text = $"{(int)score}";
+        score_menu.GetComponent<TextMeshProUGUI>().text = $"{(int)score}";
     }
 }

@@ -27,7 +27,7 @@ public class Loss : MonoBehaviour
 
     void GetLoad() 
     {
-        Bscore.GetComponent<TextMeshProUGUI>().text = $"Best Score: {YandexGame.savesData.BScore}";
+        Bscore.GetComponent<TextMeshProUGUI>().text = $"{YandexGame.savesData.BScore}";
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -46,7 +46,7 @@ public class Loss : MonoBehaviour
             if (YandexGame.savesData.BScore < Score.GetComponent<Score>().score)
             {
                 YandexGame.savesData.BScore = (int)Score.GetComponent<Score>().score;
-                Bscore.GetComponent<TextMeshProUGUI>().text = $"Best Score: {YandexGame.savesData.BScore}";
+                Bscore.GetComponent<TextMeshProUGUI>().text = $"{YandexGame.savesData.BScore}";
                 //YandexGame.NewLeaderboardScores(string "Bscore", YandexGame.savesData.BScore);
                 YandexGame.SaveProgress();
             }

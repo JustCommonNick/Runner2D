@@ -20,6 +20,6 @@ public class StartMainMenu : MonoBehaviour
 
     void GetLoad()
     {
-        GameObject.Find("BestScore").GetComponent<TextMeshProUGUI>().text = $"Best Score: {YandexGame.savesData.BScore}";
+        GameObject.Find("BestScore").GetComponent<TextMeshProUGUI>().text = $"{YandexGame.savesData.BScore}";
     }
 }

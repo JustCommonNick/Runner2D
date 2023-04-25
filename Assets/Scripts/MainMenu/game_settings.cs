@@ -10,6 +10,7 @@ public class game_settings : MonoBehaviour
     public GameObject settings;
     public GameObject b_score;
 
+
     public void OpenSettings()
     {
         start.SetActive(false);
