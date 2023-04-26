@@ -15,6 +15,7 @@ namespace YG
         public int BScore;
         public bool SoundOn;
         public string lng;
+        public int reward_score;
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
         // Пока выявленное ограничение - это расширение массива
 
