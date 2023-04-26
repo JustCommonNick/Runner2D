@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1179623
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -357,6 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   score_menu: {fileID: 705213827}
+  scorebeforead: {fileID: 910753289}
 --- !u!1 &204574222
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &204574223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -615,7 +616,10 @@ MonoBehaviour:
   - {fileID: 705213827}
   - {fileID: 1779345510}
   - {fileID: 1991432988}
+  - {fileID: 1988117950}
+  - {fileID: 30729087}
   score_main: {fileID: 30729087}
+  score_main_label: {fileID: 1988117950}
   Player: {fileID: 2081270447}
   open_menu: 0
 --- !u!1 &625983914
@@ -702,6 +706,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &639584583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607, type: 3}
+  m_PrefabInstance: {fileID: 1815077170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404d6214ebdd58d43a94c7ed650dc2f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705213827
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &705213828
 RectTransform:
   m_ObjectHideFlags: 0
@@ -850,14 +865,13 @@ GameObject:
   - component: {fileID: 775463836}
   - component: {fileID: 775463835}
   - component: {fileID: 775463838}
-  - component: {fileID: 775463839}
   m_Layer: 5
   m_Name: Restart
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &775463834
 RectTransform:
   m_ObjectHideFlags: 0
@@ -998,27 +1012,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lose: {fileID: 2081270447}
---- !u!223 &775463839
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 775463833}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &910753289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,14 +1097,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 910753289}
-        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 639584583}
+        m_TargetAssemblyTypeName: YG.YandexGame, Assembly-CSharp
+        m_MethodName: _RewardedShow
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1166,6 +1159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1f61ab0abeeff48819d25f62bce0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AdID: 1
+  scoreingame: {fileID: 30729087}
 --- !u!1 &1106489993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,7 +1440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1165708381
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1465,7 +1460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 302, y: 0}
+  m_AnchoredPosition: {x: -240.04999, y: 0}
   m_SizeDelta: {x: 458.94995, y: 485.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1165708382
@@ -1628,6 +1623,7 @@ GameObject:
   - component: {fileID: 1211364567}
   - component: {fileID: 1211364569}
   - component: {fileID: 1211364568}
+  - component: {fileID: 1211364570}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1676,7 +1672,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\u0414\u043B\u044F \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435
-    \u0441 \u0442\u0435\u043A\u0443\u0449\u0435\u043C \u0441\u0447\u0451\u0442\u043E\u043C
+    \u0441 \u0442\u0435\u043A\u0443\u0449\u0438\u043C \u0441\u0447\u0451\u0442\u043E\u043C
     \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C
     \u0440\u0435\u043A\u043B\u0430\u043C\u0443."
   m_isRightToLeft: 0
@@ -1755,6 +1751,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211364566}
   m_CullTransparentMesh: 1
+--- !u!114 &1211364570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211364566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6cadb27fa234d4cbdf778fd5585d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RU: "\u0414\u043B\u044F \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435
+    \u0441 \u0442\u0435\u043A\u0443\u0449\u0438\u043C \u0441\u0447\u0451\u0442\u043E\u043C
+    \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C
+    \u0440\u0435\u043A\u043B\u0430\u043C\u0443."
+  EU: To continue with the current score of points, you can view the advertisement.
+  TR: "Ge\xE7erli skorla oynamaya devam etmek i\xE7in reklamlar\u0131 izleyebilirsiniz."
 --- !u!1 &1304679182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1426081026
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1918,7 +1932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1579248820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2331,7 +2345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1779345511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2597,9 +2611,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6cadb27fa234d4cbdf778fd5585d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RU: "\u041C\u0435\u043D\u044E"
-  EU: Menu
-  TR: "Men\xFCde:"
+  RU: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0440\u0435\u043A\u043B\u0430\u043C\u0443"
+  EU: View ads
+  TR: "Reklamlar\u0131 g\xF6r\xFCnt\xFCle"
 --- !u!114 &1950740855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2866,7 +2880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1991432989
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3359,10 +3373,12 @@ MonoBehaviour:
   - {fileID: 705213827}
   - {fileID: 1991432988}
   - {fileID: 1779345510}
+  - {fileID: 1165708380}
   score_main: {fileID: 30729087}
   loss: 0
   soundmanager: {fileID: 1671371587}
   Score: {fileID: 30729087}
+  score_main_label: {fileID: 1988117950}
   Bscore: {fileID: 1779345510}
 --- !u!1001 &1694235751357055023
 PrefabInstance:

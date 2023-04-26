@@ -11,6 +11,7 @@ public class Loss : MonoBehaviour
     public bool loss = false;
     public GameObject soundmanager;
     public GameObject Score;
+    public GameObject score_main_label;
     public GameObject Bscore;
 
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
@@ -41,6 +42,7 @@ public class Loss : MonoBehaviour
                 uiObject.SetActive(true);
             }
             score_main.SetActive(false);
+            score_main_label.SetActive(false);
             loss = true;
             
             if (YandexGame.savesData.BScore < Score.GetComponent<Score>().score)

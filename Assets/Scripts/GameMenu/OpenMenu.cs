@@ -7,6 +7,7 @@ public class OpenMenu : MonoBehaviour
     public bool time = true;
     public GameObject[] uiObjects;
     public GameObject score_main;
+    public GameObject score_main_label;
     public GameObject Player;
     private bool _lose;
     public bool open_menu;
@@ -25,6 +26,7 @@ public class OpenMenu : MonoBehaviour
                     uiObject.SetActive(true);
                 }
                 score_main.SetActive(false);
+                score_main_label.SetActive(false);
                 Player.GetComponent<BoxCollider2D>().enabled = false;
                 open_menu = true;
             }
@@ -37,6 +39,7 @@ public class OpenMenu : MonoBehaviour
                     uiObject.SetActive(false);
                 }
                 score_main.SetActive(true);
+                score_main_label.SetActive(true);
                 Player.GetComponent<BoxCollider2D>().enabled = true;
                 open_menu = false;
             }

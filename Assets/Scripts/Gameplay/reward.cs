@@ -5,15 +5,20 @@ using YG;
 
 public class reward : MonoBehaviour
 {
+    [SerializeField] int AdID;
+    public GameObject scoreingame;
 
-    private void OnEnable() => YandexGame.GetDataEvent += Reward;
-    private void OnDisable() => YandexGame.GetDataEvent -= Reward;
+    private void OnEnable() => YandexGame.RewardVideoEvent += Rewarded;
+    private void OnDisable() => YandexGame.RewardVideoEvent -= Rewarded;
 
-    void Reward()
+    void Rewarded(int id)
     {
-        if (YandexGame.SDKEnabled == true)
+        if (id == AdID)
         {
-            
+            YandexGame.savesData.reward_score = (int)scoreingame.GetComponent<Score>().score;
+            YandexGame.savesData.showing_reward = true;
+            YandexGame.SaveProgress();
         }
     }
+
 }
