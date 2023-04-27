@@ -52,7 +52,8 @@ public class Loss : MonoBehaviour
                 //YandexGame.NewLeaderboardScores(string "Bscore", YandexGame.savesData.BScore);
                 YandexGame.SaveProgress();
             }
-            
+
+
         }
 
     }

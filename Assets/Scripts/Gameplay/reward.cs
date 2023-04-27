@@ -18,6 +18,7 @@ public class reward : MonoBehaviour
             YandexGame.savesData.reward_score = (int)scoreingame.GetComponent<Score>().score;
             YandexGame.savesData.showing_reward = true;
             YandexGame.SaveProgress();
+
         }
     }
 
