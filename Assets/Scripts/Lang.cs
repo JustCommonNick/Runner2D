@@ -23,21 +23,17 @@ public class Lang : MonoBehaviour
     }
 
     void GetLoad()
-    {
-        Debug.Log($"язык выставлен как: {YandexGame.EnvironmentData.language}");
+    { 
         if (YandexGame.EnvironmentData.language == "ru")
         {
-            Debug.Log("€зык сменен на –усский");
             this.GetComponent<TextMeshProUGUI>().text = RU;
         }
         else if (YandexGame.EnvironmentData.language == "tr")
         {
-            Debug.Log("Language switch to English");
             this.GetComponent<TextMeshProUGUI>().text = TR;
         }
         else
         {
-            Debug.Log("Language switch to English");
             this.GetComponent<TextMeshProUGUI>().text = EU;
         }
     }

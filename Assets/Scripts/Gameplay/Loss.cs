@@ -49,7 +49,7 @@ public class Loss : MonoBehaviour
             {
                 YandexGame.savesData.BScore = (int)Score.GetComponent<Score>().score;
                 Bscore.GetComponent<TextMeshProUGUI>().text = $"{YandexGame.savesData.BScore}";
-                //YandexGame.NewLeaderboardScores(string "Bscore", YandexGame.savesData.BScore);
+                YandexGame.NewLeaderboardScores("BestRun", YandexGame.savesData.BScore);
                 YandexGame.SaveProgress();
             }
 
