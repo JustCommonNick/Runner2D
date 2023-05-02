@@ -26,7 +26,7 @@ public class Score : MonoBehaviour
 
     void GetLoad()
     {
-        Debug.Log(YandexGame.savesData.showing_reward);
+
         if (YandexGame.savesData.showing_reward)
         {
             score = YandexGame.savesData.reward_score;
