@@ -6,19 +6,22 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody;
     readonly Vector2 force = new Vector2(0, 300);
-    bool inAir;
+    bool inAir = false;
 
     private float originalHeight;
     private float originalYPosition;
 
     public GameObject soundmanager;
     bool _loss;
-    
+
     public GameObject OpenMenu;
+    public bool bef_start = false;
+    public bool down = false;
 
     private void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
+        Invoke("BeforeStart", 0.1f);
     }
 
     void Update()
@@ -27,29 +30,27 @@ public class Player : MonoBehaviour
         originalHeight = transform.localScale.y;
         originalYPosition = transform.position.y;
 
-        if (Input.GetKey(KeyCode.W) && !inAir)
+        if (Input.GetKey(KeyCode.W) && !inAir && bef_start)
         {
             inAir = true;
             m_Rigidbody.AddForce(force);
-            Invoke("soundtouchground", 0.8f);
         }
 
-        if (this.GetComponent<Loss>().loss == false && OpenMenu.GetComponent<OpenMenu>().open_menu == false)
+        if (this.GetComponent<Loss>().loss == false && OpenMenu.GetComponent<OpenMenu>().open_menu == false && bef_start)
         {
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S) && !down)
             {
-                // Сжимаем капсулу и смещаем ее ниже
-                transform.localScale = new Vector3(transform.localScale.x, originalHeight / 2, transform.localScale.z);
-                transform.position = new Vector3(transform.position.x, originalYPosition - originalHeight / 2, transform.position.z);
+
+                down = true;
+                Down();
             }
-            else if (Input.GetKeyUp(KeyCode.S))
+            else if (Input.GetKeyUp(KeyCode.S) && down)
             {
-                // Возвращаем капсулу в начальное состояние
-                transform.localScale = new Vector3(transform.localScale.x, originalHeight * 2, transform.localScale.z);
-                transform.position = new Vector3(transform.position.x, originalYPosition + originalHeight, transform.position.z);
+                down = false;
+                Up();
             }
         }
-        
+
 
     }
 
@@ -57,14 +58,30 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            
+            if (inAir)
+            {
+                soundmanager.GetComponent<Sounds>().TouchGround();
+            }
             inAir = false;
+
         }
 
     }
 
-    void soundtouchground()
+    public void BeforeStart()
     {
-        soundmanager.GetComponent<Sounds>().TouchGround();
+        bef_start = true;
+    }
+
+    public void Up()
+    {
+        transform.localScale = new Vector3(transform.localScale.x, originalHeight * 2, transform.localScale.z);
+        transform.position = new Vector3(transform.position.x, originalYPosition + originalHeight, transform.position.z);
+    }
+
+    public void Down()
+    {
+        transform.localScale = new Vector3(transform.localScale.x, originalHeight / 2, transform.localScale.z);
+        transform.position = new Vector3(transform.position.x, originalYPosition - originalHeight / 2, transform.position.z);
     }
 }

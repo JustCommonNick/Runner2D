@@ -9,17 +9,23 @@ public class reward : MonoBehaviour
     public GameObject scoreingame;
 
     private void OnEnable() => YandexGame.RewardVideoEvent += Rewarded;
+
     private void OnDisable() => YandexGame.RewardVideoEvent -= Rewarded;
 
     void Rewarded(int id)
     {
+        Debug.Log($"ID {id}");
         if (id == AdID)
         {
             YandexGame.savesData.reward_score = (int)scoreingame.GetComponent<Score>().score;
             YandexGame.savesData.showing_reward = true;
             YandexGame.SaveProgress();
-
         }
+    }
+
+    public void OpenRewardAd(int id)
+    {
+        YandexGame.RewVideoShow(id);
     }
 
 }

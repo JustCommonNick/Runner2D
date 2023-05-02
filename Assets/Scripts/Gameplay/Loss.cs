@@ -13,6 +13,7 @@ public class Loss : MonoBehaviour
     public GameObject Score;
     public GameObject score_main_label;
     public GameObject Bscore;
+    public GameObject Player;
 
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
     private void OnDisable() => YandexGame.GetDataEvent -= GetLoad;
@@ -52,8 +53,7 @@ public class Loss : MonoBehaviour
                 YandexGame.NewLeaderboardScores("BestRun", YandexGame.savesData.BScore);
                 YandexGame.SaveProgress();
             }
-
-
+            Player.SetActive(false);
         }
 
     }
@@ -62,5 +62,6 @@ public class Loss : MonoBehaviour
     {
         loss = false;
     }
+
 
 }

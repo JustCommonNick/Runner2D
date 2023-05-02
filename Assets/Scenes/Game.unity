@@ -791,17 +791,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &639584583 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607, type: 3}
-  m_PrefabInstance: {fileID: 1815077170}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 404d6214ebdd58d43a94c7ed650dc2f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &696228788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,9 +1339,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 639584583}
-        m_TargetAssemblyTypeName: YG.YandexGame, Assembly-CSharp
-        m_MethodName: _RewardedShow
+      - m_Target: {fileID: 910753294}
+        m_TargetAssemblyTypeName: reward, Assembly-CSharp
+        m_MethodName: OpenRewardAd
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4579,6 +4568,7 @@ MonoBehaviour:
   Score: {fileID: 30729087}
   score_main_label: {fileID: 1988117950}
   Bscore: {fileID: 1779345510}
+  Player: {fileID: 2081270447}
 --- !u!1001 &1694235751357055023
 PrefabInstance:
   m_ObjectHideFlags: 0

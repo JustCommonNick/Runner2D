@@ -16,14 +16,17 @@ public class Score : MonoBehaviour
 
     private void Start()
     {
+
         if (YandexGame.SDKEnabled == true)
         {
             GetLoad();
         }
+        
     }
 
     void GetLoad()
     {
+        Debug.Log(YandexGame.savesData.showing_reward);
         if (YandexGame.savesData.showing_reward)
         {
             score = YandexGame.savesData.reward_score;
@@ -34,7 +37,7 @@ public class Score : MonoBehaviour
         {
             score = 0;
         }
-
+        
     }
 
     // Update is called once per frame
@@ -44,4 +47,5 @@ public class Score : MonoBehaviour
         this.GetComponent<TextMeshProUGUI>().text = $"{(int)score}";
         score_menu.GetComponent<TextMeshProUGUI>().text = $"{(int)score}";
     }
+
 }
