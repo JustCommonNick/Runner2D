@@ -33,7 +33,7 @@ public class OpenMenu : MonoBehaviour
                 Player.GetComponent<BoxCollider2D>().enabled = false;
                 open_menu = true;
                 Player.GetComponent<Player>().bef_start = false;
-}
+            }
             else if (_lose == false)
             {
                 Time.timeScale = 1;

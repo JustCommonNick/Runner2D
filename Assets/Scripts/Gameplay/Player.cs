@@ -30,13 +30,13 @@ public class Player : MonoBehaviour
         originalHeight = transform.localScale.y;
         originalYPosition = transform.position.y;
 
-        if (Input.GetKey(KeyCode.W) && !inAir && bef_start)
+        if (Input.GetKey(KeyCode.W) && !inAir && bef_start && !OpenMenu.GetComponent<OpenMenu>().open_menu)
         {
             inAir = true;
             m_Rigidbody.AddForce(force);
         }
 
-        if (this.GetComponent<Loss>().loss == false && OpenMenu.GetComponent<OpenMenu>().open_menu == false && bef_start)
+        if (this.GetComponent<Loss>().loss == false && OpenMenu.GetComponent<OpenMenu>().open_menu == false && bef_start && !OpenMenu.GetComponent<OpenMenu>().open_menu)
         {
             if (Input.GetKeyDown(KeyCode.S) && !down)
             {

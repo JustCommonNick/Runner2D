@@ -14,7 +14,6 @@ public class reward : MonoBehaviour
 
     void Rewarded(int id)
     {
-        Debug.Log("Ревард отработала");
         YandexGame.savesData.reward_score = (int)scoreingame.GetComponent<Score>().score;
         YandexGame.savesData.showing_reward = true;
         YandexGame.SaveProgress();
