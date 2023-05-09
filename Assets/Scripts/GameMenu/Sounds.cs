@@ -24,9 +24,4 @@ public class Sounds : MonoBehaviour
         asource.clip = songs[2];
         asource.Play();
     }
-    public void Move()
-    {
-        asource.clip = songs[3];
-        asource.Play();
-    }
 }

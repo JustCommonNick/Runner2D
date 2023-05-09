@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         {
             if (inAir)
             {
-                AudioManager.instance.Play("fall");
+                soundmanager.GetComponent<Sounds>().TouchGround();
             }
             inAir = false;
 

@@ -700,7 +700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573210645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.28, y: 3.73, z: 0}
+  m_LocalPosition: {x: 7.28, y: 3.73, z: 5.49}
   m_LocalScale: {x: 2.5395381, y: 2.5395381, z: 2.5395381}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1003,7 +1003,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756079202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.27, y: 3.71, z: 0}
+  m_LocalPosition: {x: 7.27, y: 3.71, z: 5.49}
   m_LocalScale: {x: 3.8247986, y: 3.8247986, z: 3.8247986}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2345,7 +2345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352121350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.3053, y: 3.7453, z: 0}
+  m_LocalPosition: {x: 7.3053, y: 3.7453, z: 5.64}
   m_LocalScale: {x: 15.759607, y: 15.759607, z: 15.759607}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2527,7 +2527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416336493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6792123, y: 1.3414397, z: 2.5721674}
+  m_LocalPosition: {x: 3.6792123, y: 1.3414397, z: 11.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3123,7 +3123,6 @@ GameObject:
   - component: {fileID: 1671371590}
   - component: {fileID: 1671371589}
   - component: {fileID: 1671371591}
-  - component: {fileID: 1671371592}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -3259,43 +3258,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ba54d0990f685b043964bab767e19f84, type: 3}
   - {fileID: 8300000, guid: 9045a8f7968bfbf49838af70a3b76c6a, type: 3}
   asource: {fileID: 1671371589}
---- !u!114 &1671371592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671371587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ccc48988f9f5ea43bc8bb3f99ea356e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: click
-    clip: {fileID: 8300000, guid: c0ab877b37fad314ea82178716e1c353, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: fall
-    clip: {fileID: 8300000, guid: ba54d0990f685b043964bab767e19f84, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: death
-    clip: {fileID: 8300000, guid: 9045a8f7968bfbf49838af70a3b76c6a, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: move
-    clip: {fileID: 8300000, guid: 6ef27f63412f8d64bb9a5e63a0576f2f, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
 --- !u!1 &1779345510
 GameObject:
   m_ObjectHideFlags: 0
@@ -3520,11 +3482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: pauseType
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: pauseMethod
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: closingADValues.timeScale

@@ -7,6 +7,7 @@ using YG;
 [System.Serializable]
 public class Score : MonoBehaviour
 {
+    private float ScoreUp;
     public float score;
     public GameObject score_menu;
     public GameObject scorebeforead;
@@ -21,7 +22,7 @@ public class Score : MonoBehaviour
         {
             GetLoad();
         }
-        
+        StartCoroutine(ScoreUpCur());
     }
 
     void GetLoad()
@@ -43,9 +44,18 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += 1 * Time.deltaTime;
+        score += (1 + ScoreUp) * Time.deltaTime;
         this.GetComponent<TextMeshProUGUI>().text = $"{(int)score}";
         score_menu.GetComponent<TextMeshProUGUI>().text = $"{(int)score}";
     }
 
+    private IEnumerator ScoreUpCur()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1.0f);
+            ScoreUp += 0.03f;
+        }
+
+    }
 }

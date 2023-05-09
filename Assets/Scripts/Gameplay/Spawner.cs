@@ -59,7 +59,7 @@ public class Spawner : MonoBehaviour
     public void SpawnUp()
     {
         int rnd = Random.Range(0, 8);
-        GameObject obstacle = Instantiate(obstaclePrefabUp[rnd], new Vector2(23f, -0.19f), Quaternion.identity);
+        GameObject obstacle = Instantiate(obstaclePrefabUp[rnd], new Vector3(23f, -0.19f, 2f), Quaternion.identity);
         obstacleList.Add(obstacle);
     }
 
@@ -68,7 +68,7 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1.0f);
-            moveSpeed += 0.01f;
+            moveSpeed += 0.03f;
         }
 
     }
