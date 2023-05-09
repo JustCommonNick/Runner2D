@@ -14,7 +14,7 @@ public class Spawn : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Trigger")
+        if (other.gameObject.tag == "Enemy")
         {
             script.Invoke();
 
