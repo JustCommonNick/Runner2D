@@ -826,8 +826,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 262.17, y: 167}
-  m_SizeDelta: {x: 199.53, y: 85.34}
+  m_AnchoredPosition: {x: 311.2, y: 167}
+  m_SizeDelta: {x: 297.59, y: 85.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &705213829
 MonoBehaviour:
@@ -1613,7 +1613,6 @@ GameObject:
   - component: {fileID: 1140401770}
   - component: {fileID: 1140401769}
   - component: {fileID: 1140401768}
-  - component: {fileID: 1140401771}
   m_Layer: 0
   m_Name: TriggerSpawn
   m_TagString: Trigger
@@ -1714,18 +1713,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1140401771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140401767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a69714e2901e13c4cb870e13a388b7a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1165708380
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,6 +3123,7 @@ GameObject:
   - component: {fileID: 1671371590}
   - component: {fileID: 1671371589}
   - component: {fileID: 1671371591}
+  - component: {fileID: 1671371592}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -3271,6 +3259,43 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ba54d0990f685b043964bab767e19f84, type: 3}
   - {fileID: 8300000, guid: 9045a8f7968bfbf49838af70a3b76c6a, type: 3}
   asource: {fileID: 1671371589}
+--- !u!114 &1671371592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671371587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ccc48988f9f5ea43bc8bb3f99ea356e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: click
+    clip: {fileID: 8300000, guid: c0ab877b37fad314ea82178716e1c353, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: fall
+    clip: {fileID: 8300000, guid: ba54d0990f685b043964bab767e19f84, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: death
+    clip: {fileID: 8300000, guid: 9045a8f7968bfbf49838af70a3b76c6a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: move
+    clip: {fileID: 8300000, guid: 6ef27f63412f8d64bb9a5e63a0576f2f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
 --- !u!1 &1779345510
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,8 +3331,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 262.53, y: 66}
-  m_SizeDelta: {x: 198.8002, y: 85.34}
+  m_AnchoredPosition: {x: 311.56, y: 66}
+  m_SizeDelta: {x: 296.87, y: 85.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1779345512
 MonoBehaviour:

@@ -6,13 +6,12 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody;
     readonly Vector2 force = new Vector2(0, 300);
-    bool inAir = false;
+    bool inAir;
 
     private float originalHeight;
     private float originalYPosition;
 
     public GameObject soundmanager;
-    bool _loss;
 
     public GameObject OpenMenu;
     public bool bef_start = false;
@@ -22,6 +21,7 @@ public class Player : MonoBehaviour
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
         Invoke("BeforeStart", 0.1f);
+        bool inAir = false;
     }
 
     void Update()
@@ -51,7 +51,6 @@ public class Player : MonoBehaviour
             }
         }
 
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -60,7 +59,7 @@ public class Player : MonoBehaviour
         {
             if (inAir)
             {
-                soundmanager.GetComponent<Sounds>().TouchGround();
+                AudioManager.instance.Play("fall");
             }
             inAir = false;
 
