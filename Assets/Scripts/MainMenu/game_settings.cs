@@ -9,6 +9,7 @@ public class game_settings : MonoBehaviour
     public GameObject start;
     public GameObject settings;
     public GameObject b_score;
+    public GameObject b_score_label;
 
 
     public void OpenSettings()
@@ -18,6 +19,7 @@ public class game_settings : MonoBehaviour
         b_score.SetActive(false);
         music.SetActive(true);
         back_button.SetActive(true);
+        b_score_label.SetActive(false);
     }
 
     public void CloseSettings()
@@ -27,5 +29,6 @@ public class game_settings : MonoBehaviour
         start.SetActive(true);
         settings.SetActive(true);
         b_score.SetActive(true);
+        b_score_label.SetActive(true);
     }
 }
