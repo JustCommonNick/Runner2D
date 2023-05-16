@@ -6,6 +6,7 @@ using YG;
 public class EnDisMusic : MonoBehaviour
 {
     public GameObject off_ico;
+    public GameObject on_ico;
     bool SoundOn;
 
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
@@ -29,6 +30,7 @@ public class EnDisMusic : MonoBehaviour
             YandexGame.savesData.SoundOn = SoundOn;
             AudioListener.volume = 0;
             off_ico.SetActive(true);
+            on_ico.SetActive(false);
         }
         else
         {
@@ -36,6 +38,7 @@ public class EnDisMusic : MonoBehaviour
             YandexGame.savesData.SoundOn = SoundOn;
             AudioListener.volume = 1;
             off_ico.SetActive(false);
+            on_ico.SetActive(true);
         }
         YandexGame.SaveProgress();
     }
@@ -47,12 +50,14 @@ public class EnDisMusic : MonoBehaviour
         if (!SoundOn)
         {
             off_ico.SetActive(true);
+            on_ico.SetActive(false);
             AudioListener.volume = 0;
         }
         else
         {
             AudioListener.volume = 1;
             off_ico.SetActive(false);
+            on_ico.SetActive(true);
         }
     }
 
