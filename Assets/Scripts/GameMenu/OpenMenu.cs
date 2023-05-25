@@ -18,44 +18,50 @@ public class OpenMenu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (time == true)
+            OpenCloseMenu();
+        }
+    }
+
+    public void OpenCloseMenu() 
+    {
+        if (time == true)
+        {
+            Time.timeScale = 0;
+            time = false;
+
+            foreach (GameObject uiObject in uiObjects)
             {
-                Time.timeScale = 0;
-                time = false;
-
-                foreach (GameObject uiObject in uiObjects)
-                {
-                    uiObject.SetActive(true);
-                }
-
-                score_main.SetActive(false);
-                score_main_label.SetActive(false);
-                Player.GetComponent<BoxCollider2D>().enabled = false;
-                open_menu = true;
-                Player.GetComponent<Player>().bef_start = false;
+                uiObject.SetActive(true);
             }
-            else if (_lose == false)
+
+            score_main.SetActive(false);
+            score_main_label.SetActive(false);
+            Player.GetComponent<BoxCollider2D>().enabled = false;
+            open_menu = true;
+            Player.GetComponent<Player>().bef_start = false;
+        }
+        else if (_lose == false)
+        {
+            Time.timeScale = 1;
+            time = true;
+
+            foreach (GameObject uiObject in uiObjects)
             {
-                Time.timeScale = 1;
-                time = true;
+                uiObject.SetActive(false);
+            }
 
-                foreach (GameObject uiObject in uiObjects)
-                {
-                    uiObject.SetActive(false);
-                }
+            score_main.SetActive(true);
+            score_main_label.SetActive(true);
+            Player.GetComponent<BoxCollider2D>().enabled = true;
+            open_menu = false;
+            Player.GetComponent<Player>().Invoke("BeforeStart", 0.1f);
 
-                score_main.SetActive(true);
-                score_main_label.SetActive(true);
-                Player.GetComponent<BoxCollider2D>().enabled = true;
-                open_menu = false;
-                Player.GetComponent<Player>().Invoke("BeforeStart", 0.1f);
-
-                if (Player.transform.localScale.y == 0.5f)
-                {
-                    Player.GetComponent<Player>().Up();
-                    Player.GetComponent<Player>().down = false;
-                }
+            if (Player.transform.localScale.y == 0.5f)
+            {
+                Player.GetComponent<Player>().Up();
+                Player.GetComponent<Player>().down = false;
             }
         }
     }
+
 }
