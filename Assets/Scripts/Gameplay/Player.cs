@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
             }
         }
 
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -70,6 +71,33 @@ public class Player : MonoBehaviour
     public void BeforeStart()
     {
         bef_start = true;
+    }
+
+    public void UpButton()
+    {
+        if (!inAir && bef_start && !OpenMenu.GetComponent<OpenMenu>().open_menu)
+        {
+            inAir = true;
+            m_Rigidbody.AddForce(force);
+        }
+    }
+
+    public void DownButton()
+    {
+        if (this.GetComponent<Loss>().loss == false && OpenMenu.GetComponent<OpenMenu>().open_menu == false && bef_start && !OpenMenu.GetComponent<OpenMenu>().open_menu)
+        {
+            if (!down)
+            {
+
+                down = true;
+                Down();
+            }
+            else if (down)
+            {
+                down = false;
+                Up();
+            }
+        }
     }
 
     public void Up()

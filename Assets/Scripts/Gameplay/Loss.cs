@@ -14,6 +14,7 @@ public class Loss : MonoBehaviour
     public GameObject score_main_label;
     public GameObject Bscore;
     public GameObject Player;
+    public GameObject AdaptOnMobileScript;
 
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
     private void OnDisable() => YandexGame.GetDataEvent -= GetLoad;
@@ -45,7 +46,10 @@ public class Loss : MonoBehaviour
             score_main.SetActive(false);
             score_main_label.SetActive(false);
             loss = true;
-            
+
+            AdaptOnMobileScript.GetComponent<AdaptOnMobile>().GetLoad();
+
+
             if (YandexGame.savesData.BScore < Score.GetComponent<Score>().score)
             {
                 YandexGame.savesData.BScore = (int)Score.GetComponent<Score>().score;

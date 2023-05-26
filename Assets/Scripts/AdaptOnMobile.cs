@@ -22,7 +22,7 @@ public class AdaptOnMobile : MonoBehaviour
     }
 
     // Update is called once per frame
-    void GetLoad()
+    public void GetLoad()
     {
         if (YandexGame.EnvironmentData.isMobile)
         {
