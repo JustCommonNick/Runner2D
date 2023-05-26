@@ -47,4 +47,11 @@ public class AdaptOnMobile : MonoBehaviour
             OpenMobileButtons = true;
         }
     }
+
+    public void ActiveFalseMobileUI()
+    {
+        ButtonMenu.SetActive(false);
+        ButtonUp.SetActive(false);
+        ButtonDown.SetActive(false);
+    }
 }

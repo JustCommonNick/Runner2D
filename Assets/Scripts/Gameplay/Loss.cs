@@ -47,7 +47,7 @@ public class Loss : MonoBehaviour
             score_main_label.SetActive(false);
             loss = true;
 
-            AdaptOnMobileScript.GetComponent<AdaptOnMobile>().GetLoad();
+            AdaptOnMobileScript.GetComponent<AdaptOnMobile>().ActiveFalseMobileUI();
 
 
             if (YandexGame.savesData.BScore < Score.GetComponent<Score>().score)
