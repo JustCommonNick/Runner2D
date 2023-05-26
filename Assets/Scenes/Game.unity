@@ -905,6 +905,7 @@ MonoBehaviour:
   - {fileID: 1988117950}
   - {fileID: 30729087}
   - {fileID: 1501803139}
+  - {fileID: 1134274475}
   score_main: {fileID: 30729087}
   score_main_label: {fileID: 1988117950}
   Player: {fileID: 2081270447}
@@ -921,9 +922,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae24555749730f4599e661e1b1f53fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonMenu: {fileID: 0}
-  ButtonUp: {fileID: 0}
-  ButtonDown: {fileID: 0}
+  ButtonMenu: {fileID: 1619404212}
+  ButtonUp: {fileID: 169625307}
+  ButtonDown: {fileID: 1678862940}
 --- !u!1 &573210645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,6 +1904,11 @@ MonoBehaviour:
   RU: "\u0420\u0435\u0441\u0442\u0430\u0440\u0442"
   EU: Restart
   TR: "Yeniden ba\u015Flatma"
+--- !u!1 &1134274475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7149767997760337935, guid: ae8f43d803bab62468bf1646ea8bcf7a, type: 3}
+  m_PrefabInstance: {fileID: 1603518288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1140401767
 GameObject:
   m_ObjectHideFlags: 0
@@ -3193,7 +3199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7149767997760337932, guid: ae8f43d803bab62468bf1646ea8bcf7a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -1.5
+      value: -0.6099647
       objectReference: {fileID: 0}
     - target: {fileID: 7149767997760337932, guid: ae8f43d803bab62468bf1646ea8bcf7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3229,7 +3235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7149767997760337932, guid: ae8f43d803bab62468bf1646ea8bcf7a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.5
+      value: 1.0550232
       objectReference: {fileID: 0}
     - target: {fileID: 7149767997760337932, guid: ae8f43d803bab62468bf1646ea8bcf7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3252,16 +3258,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7149767997760337934, guid: ae8f43d803bab62468bf1646ea8bcf7a, type: 3}
+      propertyPath: quantityTop
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7149767997760337934, guid: ae8f43d803bab62468bf1646ea8bcf7a, type: 3}
       propertyPath: updateLBMethod
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7149767997760337934, guid: ae8f43d803bab62468bf1646ea8bcf7a, type: 3}
       propertyPath: maxQuantityPlayers
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7149767997760337935, guid: ae8f43d803bab62468bf1646ea8bcf7a, type: 3}
       propertyPath: m_Name
       value: Leaderboard EntriesText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7149767997760337935, guid: ae8f43d803bab62468bf1646ea8bcf7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7149767997878345381, guid: ae8f43d803bab62468bf1646ea8bcf7a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5107,6 +5121,7 @@ MonoBehaviour:
   - {fileID: 1779345510}
   - {fileID: 1165708380}
   - {fileID: 1501803139}
+  - {fileID: 1134274475}
   score_main: {fileID: 30729087}
   loss: 0
   soundmanager: {fileID: 1671371587}
@@ -5224,7 +5239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1694235751147423102, guid: fcc70d581a92dc24db5190e0b9d3fc55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.42
+      value: -4.46
       objectReference: {fileID: 0}
     - target: {fileID: 1694235751147423102, guid: fcc70d581a92dc24db5190e0b9d3fc55, type: 3}
       propertyPath: m_LocalPosition.y
